@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2017 North Yearbook</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="icon" href="media/icon.ico">
+        <script src="js/main.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="theme-color" content="#0078C8"/>
+    </head>
+    <body id="body">
+        <div class="menu" id="menu">
+            menu
+        </div>
+        <div class="pageCover" id="pageCover" onmousedown="closeMenu()"></div>
+        <div class="top">
+            <button class="menuBtn" id="menuBtn" onmousedown="openMenu(this.id)">
+                <div class="menuBtnBar"></div>
+                <div class="menuBtnBar"></div>
+                <div class="menuBtnBar"></div>
+            </button>
+            <div class="topContainer">
+                <img src="media/yb testing.jpg" class="topYBImg" id="topYBImg"/>
+                <div class="topContent">
+                    <div class="topName">2017 North Yearbook</div>
+                    <hr/>
+                    <div class="topNavButtons">
+                        <button class="topNavButton" id="topNB1" onmousedown="changeTopContent(this.id)">Shortcuts</button>
+                        <button class="topNavButton" id="topNB2" onmousedown="changeTopContent(this.id)">Cover</button>
+                        <button class="topNavButton" id="topNB3" onmousedown="changeTopContent(this.id)">Quotes</button>
+                    </div>
+                    <div class="topButtons" id="topButtons">
+                        <button class="topButton" id="topShortcutBtn1">Shortcut</button><br/>
+                        <button class="topButton" id="topShortcutBtn2">Shortcut</button><br/>
+                        <button class="topButton" id="topShortcutBtn3">Shortcut</button><br/>
+                    </div>
+                    <div class="topCoverImg" id="topCover">
+                        <img src="media/yb testing.jpg"/>
+                        <br/>
+                        <a href="media/yb testing.jpg" target="_blank" style="text-decoration: underline; font-size: 20px">
+                            View Yearbook Cover
+                        </a>
+                    </div>
+                    <div class="topQuotes" id="topQuotes">
+                        top quotes
+                    </div>
+                </div>
+            </div>
+        </div>
+        content
+    </body>
+</html>
