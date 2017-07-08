@@ -1,3 +1,4 @@
+/*Styles across multiple pages*/
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 html, body {
@@ -6,6 +7,7 @@ html, body {
 }
 body {
     background-image:url("../media/background/bk50.jpg");
+    font-family: "lato";
 }
 button {
     outline: none;
@@ -37,12 +39,14 @@ a, a:visited {
     transition: all 200ms ease-in-out;
     z-index: 10;
 }
-.top {
+.pageCover {
+    position: fixed;
+    height: 100%;
     width: 100%;
-    height: 350px;
-    max-height: 75vh;
-    background-color: rgba(120, 170, 215, .75);
-    z-index: 1;
+    z-index: 9;
+    background-color: transparent;
+    display: none;
+    transition: all 200ms ease-in-out;
 }
 .menuBtn {
     border: 0px;
@@ -63,111 +67,4 @@ a, a:visited {
     width: 100%;
     margin: 20% 0px 20% 0px;
     background-color: rgb(0, 120, 200);
-}
-.topContainer {
-    height: 80%;
-    width: 80%;
-    position: relative;
-    top:10%;
-    left: 10%;
-    display: flex;
-    box-shadow: 0px 0px 50px black;
-}
-.topYBImg {
-    height: calc(100% - 20px);
-    opacity: 1;
-    margin: 10px;
-    opacity: 0;
-    transform: scale(.8);
-    transition: all 200ms ease-in-out;
-}
-.topContent {
-    width: 100%;
-    padding:10px;
-    overflow-y: auto;
-    background-color: rgba(255, 255, 255, .45);
-}
-.topName {
-    font-size: 35px;
-    font-family: 'Lato';
-    padding: 10px;
-}
-.topNavButtons {
-    width: 100%;
-    padding: 5px 0px 5px 0px;
-    display: none;
-}
-.topNavButton {
-    flex: 1;
-    border: 0px solid black;
-    background-color: rgba(255, 255, 255, .3);
-    font-size: 15px;
-    padding: 10px;
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
-}
-.topNavButton:first-child {
-    color: white;
-    background-color: rgba(100, 100, 100, .8);
-    box-shadow: 0px 0px 10px black;
-}
-.topButtons {
-    padding:10px;
-    transition: all 200ms ease-in-out;
-}
-.topButtons > br {
-    display: none;
-}
-.topButton {
-    font-size: 20px;
-    min-width: 200px;
-    cursor: pointer;
-    word-break: normal;
-    border: 2px solid black;
-    background-color: rgba(0, 120, 200, .25);
-    padding: 15px 10px 15px 10px;
-    margin: 10px;
-    opacity: 0;
-    transition: all 500ms ease-in-out;
-}
-.topCoverImg {
-    display: none;
-    padding: 10px 0px 10px 0px;
-    text-align: center;
-    transition: all 200ms ease-in-out;
-}
-.topCoverImg > img {
-    width: 50%;
-}
-.topQuotes {
-    display: none;
-}
-.pageCover {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 9;
-    background-color: transparent;
-    display: none;
-    transition: all 200ms ease-in-out;
-}
-@media screen and (max-width: 600px) {
-    .top {
-        max-height: 100vh;
-        height: 90vh;
-    }
-    .topYBImg {
-        display: none;
-    }
-    .topNavButtons {
-        display: flex;
-    }
-    .topButtons {
-        text-align: center;
-    }
-    .topButton {
-        width: calc(100% - 30px);
-        font-size: 15px;
-        padding: 10px 5px 10px 5px;
-    }
 }

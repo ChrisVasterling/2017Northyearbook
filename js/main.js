@@ -7,9 +7,10 @@ window.addEventListener('load', function() {
         fadeInElementsTrig("topButton");
     }, 750)
 
-    // sets default topNavButton for use when changing
+    // sets default topNavButton/topCOntent/CurentSec for use when changing
     prevTopContentBtn = document.getElementById("topNB1");
-    prevTopContent = document.getElementById('topButtons')
+    prevTopContent = document.getElementById('topButtons');
+    curTopSec = document.getElementById("topButtons");
 })
 window.addEventListener("resize", function(){
     var body = document.getElementById('body');
@@ -62,8 +63,7 @@ function fadeInElement(element, timeOut) {
 function changeTopContent(btn) {
     var tb = document.getElementById(btn),
         ptcB = prevTopContentBtn,
-        ptc = prevTopContent,
-        curSec;
+        ptc = prevTopContent;
     if (tb != ptcB) {
         tb.style.boxShadow = "0px 0px 10px black";
         tb.style.color = "white";
@@ -73,17 +73,17 @@ function changeTopContent(btn) {
         ptcB.style.backgroundColor = "rgba(255, 255, 255, .3)";
         ptc.style.display = 'none';
         if (tb.id == "topNB1") {
-            var curSec = document.getElementById("topButtons");
-            curSec.style.display = "block";
-            ptc = curSec;
+            curTopSec = document.getElementById("topButtons");
+            curTopSec.style.display = "block";
+            ptc = curTopSec;
         } else if (tb.id == "topNB2") {
-            var curSec = document.getElementById("topCover");
-            curSec.style.display = "block";
-            ptc = curSec;
+            curTopSec = document.getElementById("topCoverImg");
+            curTopSec.style.display = "block";
+            ptc = curTopSec;
         } else if (tb.id == "topNB3") {
-            var curSec = document.getElementById("topQuotes");
-            curSec.style.display = "block";
-            ptc = curSec;
+            curTopSec = document.getElementById("topCO2017");
+            curTopSec.style.display = "block";
+            ptc = curTopSec;
         }
         prevTopContentBtn = tb;
         prevTopContent = ptc;
