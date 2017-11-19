@@ -1,58 +1,24 @@
 window.addEventListener('load', function() {
     // animate in shortcut buttons and yb image
     setTimeout(function(){
-        var ybi = document.getElementById("topYBImg");
-        ybi.style.transform = "scale(1)"
-        fadeInElement(ybi, 0);
-        fadeInElementsTrig("topButton");
+        fadeInElementsTrig("navMenuItem", 350);
     }, 750)
 
-    // sets default topNavButton/topCOntent/CurentSec for use when changing
-    prevTopContentBtn = document.getElementById("topNB1");
-    prevTopContent = document.getElementById('topButtons');
-    curTopSec = document.getElementById("topButtons");
+    navBarBackFill()
 })
 window.addEventListener("resize", function(){
-    var body = document.getElementById('body');
-    if (body.offsetWidth > 600) {
-        changeTopContent("topNB1");
+    var body = document.getElementById('body'),
+        menuState = document.getElementById("navMenuBtn");
+    navBarBackFill()
+    if ((menuState.dataset.state == "open") && (window.innerWidth >= 800)) {
+        console.log("k")
+        toggleMenu("navMenuBtn")
     }
 })
-var menuOpenDur = 200;
-function openMenu(btn) {
-    var tog = document.getElementById(btn),
-        men = document.getElementById('menu'),
-        cov = document.getElementById('pageCover');
-    tog.style.boxShadow = "0px 0px 0px black";
-    // move tog down and left 5 to give 3d button feel
-    tog.style.transform = "translate3d(-5px, 5px, 0px)"
-    tog.style.opacity = "0";
-    cov.style.display = 'block';
-    setTimeout(function(){
-        men.style.transform = "translate3d(300px, 0px, 0px)"
-        men.style.boxShadow = "5px 0px 15px black";
-        setTimeout(function(){
-            cov.style.backgroundColor = 'rgba(0, 0, 0, .4)';
-        }, 0)
-        tog.style.boxShadow = "-5px 5px 10px black";
-        tog.style.transform = "translate3d(0px, 0px, 0px)"
-        tog.style.opacity = "1";
-    }, menuOpenDur)
-}
-function closeMenu() {
-    var men = document.getElementById('menu'),
-        cov = document.getElementById('pageCover');
-    men.style.transform = "translate3d(0px, 0px, 0px)"
-    men.style.boxShadow = "0px 0px 0px black";
-    cov.style.backgroundColor = "rgba(0, 0, 0, 0)"
-    setTimeout(function(){
-        cov.style.display = "none";
-    }, menuOpenDur)
-}
-function fadeInElementsTrig(elements) {
+function fadeInElementsTrig(elements, timeOut) {
     var ele = document.getElementsByClassName(elements);
     for (i=0;i<ele.length;i++) {
-        fadeInElement(document.getElementById(ele[i].id), (350 * (i / 2)))
+        fadeInElement(document.getElementById(ele[i].id), (timeOut * (i / 2)))
     }
 }
 function fadeInElement(element, timeOut) {
@@ -60,32 +26,81 @@ function fadeInElement(element, timeOut) {
         element.style.opacity = '1';
     }, timeOut)
 }
-function changeTopContent(btn) {
-    var tb = document.getElementById(btn),
-        ptcB = prevTopContentBtn,
-        ptc = prevTopContent;
-    if (tb != ptcB) {
-        tb.style.boxShadow = "0px 0px 10px black";
-        tb.style.color = "white";
-        tb.style.backgroundColor = "rgba(100, 100, 100, .8";
-        ptcB.style.boxShadow = "0px 0px 0px black";
-        ptcB.style.color = "black";
-        ptcB.style.backgroundColor = "rgba(255, 255, 255, .3)";
-        ptc.style.display = 'none';
-        if (tb.id == "topNB1") {
-            curTopSec = document.getElementById("topButtons");
-            curTopSec.style.display = "block";
-            ptc = curTopSec;
-        } else if (tb.id == "topNB2") {
-            curTopSec = document.getElementById("topCoverImg");
-            curTopSec.style.display = "block";
-            ptc = curTopSec;
-        } else if (tb.id == "topNB3") {
-            curTopSec = document.getElementById("topCO2017");
-            curTopSec.style.display = "block";
-            ptc = curTopSec;
-        }
-        prevTopContentBtn = tb;
-        prevTopContent = ptc;
+function navBarBackFill() {
+    var navBar = document.getElementById("navBar"),
+        navBarBackFiller = document.getElementById("navBarBackFiller");
+
+    navBarBackFiller.style.height = navBar.offsetHeight + "px";
+}
+function toggleMenu(tog) {
+    var btn = document.getElementById(tog),
+        menu = document.getElementById("navMenuMobile"),
+        nmc = document.getElementById("navMenuCover"),
+        bd = document.getElementById("body");
+
+    if (btn.dataset.state == "close") {
+        btn.style.opacity = "0";
+        btn.style.transform = "scale(.95)";
+        btn.style.boxShadow = "0px 0px 0px black";
+        nmc.style.display = "block";
+        setTimeout(function(){
+            btn.dataset.state = "open";
+            menu.style.transform = "translate3d(0px, 0px, 0px)";
+            nmc.style.backgroundColor = "rgba(0, 0, 0, .75)";
+            btn.style.opacity = "1";
+            btn.style.transform = "scale(1)";
+            btn.style.boxShadow = "-5px 5px 10px black";
+            bd.style.overflow = "hidden";
+        }, 200)
+    } else if (btn.dataset.state == "open") {
+        menu.style.transform = "translate3d(-100%, 0px, 0px)";
+        btn.dataset.state = "close";
+        nmc.style.backgroundColor = "transparent";
+        bd.style.overflow = "auto";
+        setTimeout(function(){
+            nmc.style.display = "none"
+        }, 200);
     }
+}
+function menuItemSelection(btn, animateDelay, pageDelay) {
+    var bottomBar = document.getElementById(btn + "Hr"),
+        item = document.getElementById(btn),
+        page = item.dataset.page;
+        bottomBar.style.transform = "rotateY(0deg)";
+        bottomBar.style.opacity = "1";
+    setTimeout(function(){
+        if (item.id.substr(11, 6).toLowerCase() == "mobile") {
+            toggleMenu("navMenuBtn")
+        }
+        JSLink(btn, "external", pageDelay);
+    }, animateDelay)
+}
+function bottomSlide(btn) {
+	var btnId = document.getElementById(btn + "Hr");
+    btnId.style.transform = "rotateY(0deg)";
+    btnId.style.opacity = "1";
+	setTimeout( function() {
+        btnId.style.transform = "rotateY(180deg)";
+        btnId.style.opacity = "0";
+	}, 250)
+}
+function JSLink(btn, IntExt, delay) {
+    if (IntExt == 'external') {
+        var url = document.getElementById(btn).dataset.page;
+        setTimeout( function() {
+            window.open(url, "_self")
+        }, delay)
+    } else if (IntExt == 'newTab') {
+        var url = document.getElementById(btn).dataset.page;
+        window.open(url)
+    } else if (IntExt == 'back') {
+        window.history.back()
+    } else if (IntExt == 'internal') {
+        var location = document.getElementById(btn).dataset.page,
+            section = document.getElementById(location).offsetTop;
+        setTimeout( function() {
+            window.scrollTo(0, section);
+        }, delay)
+    };
+
 }

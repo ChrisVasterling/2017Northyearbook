@@ -1,13 +1,12 @@
-/*Styles across multiple pages*/
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Lato');
 html, body {
     padding: 0px;
     margin: 0px;
 }
 body {
-    background-image:url("../media/background/bk50.jpg");
+    /*background-image:url("../media/background/bk50.jpg");*/
     font-family: "lato";
+    position: relative;
+    overflow-x: hidden;
 }
 button {
     outline: none;
@@ -15,9 +14,10 @@ button {
 }
 hr {
     border: 0px solid black;
-    border-top: 2px solid black;
     padding: 0px;
     margin: 0px;
+    height: 2px;
+    background-color: black;
 }
 a, a:visited {
     color: blue;
@@ -28,43 +28,21 @@ a, a:visited {
     background-color: rgb(215, 10, 45);
     color: white;
 }
-.menu {
-    position: fixed;
-    top: 0px;
-    left: -300px;
-    height: 100%;
-    width: 300px;
-    max-width: 75%;
-    background: rgba(255, 255, 255, 1);
-    transition: all 200ms ease-in-out;
-    z-index: 10;
+* {
+    //outline: red 1px dashed;
 }
-.pageCover {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    z-index: 9;
-    background-color: transparent;
-    display: none;
-    transition: all 200ms ease-in-out;
+.content {
+    position: relative;
+    left: 10%;
+    width: 80%;
+    background-color: rgb(120, 170, 215);
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px -5px black;
+    text-align: center;
 }
-.menuBtn {
-    border: 0px;
-    cursor: pointer;
-    padding: 0px 10px 0px 10px;
-    position: fixed;
-    top: 10px;
-    left: 15px;
-    height: 50px;
-    width: 50px;
-    background-color: rgb(200, 200, 200);
-    box-shadow: -5px 5px 10px black;
-    transition: all 200ms ease-in-out;
-    z-index: 8;
-}
-.menuBtnBar {
-    height: 3px;
-    width: 100%;
-    margin: 20% 0px 20% 0px;
-    background-color: rgb(0, 120, 200);
+.contentNavBtn {
+    min-width: 230px;
+    max-width: 100%;
+    margin: 5px 10px 5px 10px;
+    display: inline-block;
 }
