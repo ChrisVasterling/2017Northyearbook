@@ -1,0 +1,7 @@
+Height: 650;
+width: 500;
+
+Or equivlent ratio
+
+13:10
+Height:Width

@@ -60,6 +60,11 @@
     z-index: 10;
     overflow-y: auto;
 }
+.navMenuMobile > img {
+    width: calc(100% - 20px);
+    margin: 10px;
+    border-radius: 5px;
+}
 .navItemMobile {
     margin: 5px;
     padding: 5px;

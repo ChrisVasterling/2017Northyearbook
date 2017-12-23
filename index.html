@@ -40,7 +40,12 @@
                 </div>
             </div>
             <div class="navMenuMobile" id="navMenuMobile">
-                <img src="media/NHSLogo.jpg" style="width: 100%;"/>
+                <img src="media/NHSLogo.jpg"/>
+                <a href="http://www.ecasd.us/North-High-School/Home" target="_blank"
+                   style="width: 100%; text-align: center; display: block; text-decoration: underline;">
+                   Website
+                </a>
+                <hr style="width: 80%; margin: 10px 10% 10px 10%; background-color: rgb(200, 200, 200);"/>
                 <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile1" data-page="html/seniors.html">
                     Seniors
                     <hr id="navMenuItemMobile1Hr"/>
@@ -57,7 +62,7 @@
                     Freshmen
                     <hr id="navMenuItemMobile4Hr"/>
                 </div>
-                <hr style="width: 80%; margin: 10px 10% 10px 10%; background-color: rgb(200, 200, 200);"/>
+                <hr style="width: 50%; margin: 5px 25% 5px 25%; background-color: rgb(200, 200, 200);"/>
                 <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile5" data-page="html/dances.html">
                     Dances
                     <hr id="navMenuItemMobile5Hr"/>
@@ -71,25 +76,158 @@
         </div>
         <div class="navBarBackFiller" id="navBarBackFiller"></div>
         <hr style="width: 80%; margin: 20px 10% 20px 10%; background-color: rgb(215, 10, 45);"/>
-        <div class="content">
-            <button class="navItemMobile contentNavBtn">
+        <div class="contentNav">
+            <button class="navItemMobile contentNavBtn" onclick="JSLink(this.id, 'internal', 350)" id="fallBtn" data-page="fallSec">
                 Fall
                 <hr/>
             </button>
-            <button class="navItemMobile contentNavBtn">
+            <button class="navItemMobile contentNavBtn" onclick="JSLink(this.id, 'internal', 350)" id="winterBtn" data-page="winterSec">
                 Winter
                 <hr/>
             </button>
-            <button class="navItemMobile contentNavBtn">
+            <button class="navItemMobile contentNavBtn" onclick="JSLink(this.id, 'internal', 350)" id="springBtn" data-page="springSec">
                 Spring
                 <hr/>
             </button>
         </div>
-        <spaceFiller>
-            Example Text
-            <br/><br/><br/><br/><br/>Example Text<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>Example Text<br/><br/><br/><br/><br/><br/><br/>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>Example Text<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            Example Text
-        </spaceFiller>
+        <hr style="width: 50%; margin: 15px 25% 15px 25%; background-color: rgb(215, 10, 45);"/>
+        <div class="content">
+            <!-- Commented code moves to group photos page
+            <div class="photoGal">
+                <div class="photoGalControls">
+                    <img src="media/spring/group_photos/sports/track-xc/1.jpg" class="photoGalControlImg"/>
+                    <img src="media/spring/group_photos/sports/track-xc/2.jpg" class="photoGalControlImg"/>
+                    <img src="media/spring/group_photos/sports/track-xc/3.jpg" class="photoGalControlImg"/>
+                    <br/>
+                </div>
+                <div class="photoGalContent">
+                    kjsdhf
+                </div>
+            </div>
+        -->
+            <div id="fallSec">
+                <div class="contentTitle">Fall</div>
+                <div class="seasonContentImgs">
+                    <div class="seasonContentImg">
+                        <a href="media/fall/fall.jpg" target="_blank">
+                            <img class="ybIMG" src="media/fall/fall_small.jpg"/>
+                        </a>
+                    </div>
+                    <div class="seasonContentImg">
+                        <a href="media/fall/fall2.jpg" target="_blank">
+                            <img class="ybIMG" src="media/fall/fall2_small.jpg"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="seasonContentBtns">
+                    <button class="navItemMobile"
+                            data-page="html/fall/sports.html" id="seasonContentFallBtn1"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Fall Sports
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/fall/hoco.html" id="seasonContentFallBtn2"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Homecoming
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/fall/life.html" id="seasonContentFallBtn3"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Student Life
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/fall/homosapiens.html" id="seasonContentFallBtn4"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        School Pictures
+                        <hr/>
+                    </button>
+                </div>
+            </div>
+            <div id="winterSec">
+                <div class="contentTitle">Winter</div>
+                <div class="seasonContentImgs">
+                    <div class="seasonContentImg">
+                        <a href="media/winter/winter.jpg" target="_blank">
+                            <img class="ybIMG" src="media/winter/winter_small.jpg"/>
+                        </a>
+                    </div>
+                    <div class="seasonContentImg">
+                        <a href="media/winter/winter2.jpg" target="_blank">
+                            <img class="ybIMG" src="media/winter/winter2_small.jpg"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="seasonContentBtns">
+                    <button class="navItemMobile"
+                            data-page="html/winter/sports.html" id="seasonContentWinterBtn1"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Winter Sports
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/winter/dances.html" id="seasonContentWinterBtn2"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Dances
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/winter/life.html" id="seasonContentWinterBtn3"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Student Life
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/winter/arts.html" id="seasonContentWinterBtn4"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Arts
+                        <hr/>
+                    </button>
+                </div>
+            </div>
+            <div id="springSec">
+                <div class="contentTitle">Spring</div>
+                <div class="seasonContentImgs">
+                    <div class="seasonContentImg">
+                        <a href="media/spring/spring.jpg" target="_blank">
+                            <img class="ybIMG" src="media/spring/spring_small.jpg"/>
+                        </a>
+                    </div>
+                    <div class="seasonContentImg">
+                        <a href="media/spring/spring2.jpg" target="_blank">
+                            <img class="ybIMG" src="media/spring/spring2_small.jpg"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="seasonContentBtns">
+                    <button class="navItemMobile"
+                            data-page="html/spring/sports.html" id="seasonContentSpringBtn1"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Spring Sports
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/spring/prom.html" id="seasonContentSpringBtn2"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Prom
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/spring/life.html" id="seasonContentSpringBtn3"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Student Life
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile"
+                            data-page="html/spring/group.html" id="seasonContentSpringBtn4"
+                            onmousedown="JSLink(this.id, 'external', 350)">
+                        Group Photos
+                        <hr/>
+                    </button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

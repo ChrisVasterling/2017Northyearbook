@@ -3,8 +3,8 @@ window.addEventListener('load', function() {
     setTimeout(function(){
         fadeInElementsTrig("navMenuItem", 350);
     }, 750)
-
     navBarBackFill()
+    alert("THIS WEBSITE IS NOT FINISHED \n LINKS MAY NOT WORK")
 })
 window.addEventListener("resize", function(){
     var body = document.getElementById('body'),
@@ -31,6 +31,7 @@ function navBarBackFill() {
         navBarBackFiller = document.getElementById("navBarBackFiller");
 
     navBarBackFiller.style.height = navBar.offsetHeight + "px";
+    return navBar.offsetHeight;
 }
 function toggleMenu(tog) {
     var btn = document.getElementById(tog),
@@ -47,10 +48,12 @@ function toggleMenu(tog) {
             btn.dataset.state = "open";
             menu.style.transform = "translate3d(0px, 0px, 0px)";
             nmc.style.backgroundColor = "rgba(0, 0, 0, .75)";
-            btn.style.opacity = "1";
-            btn.style.transform = "scale(1)";
-            btn.style.boxShadow = "-5px 5px 10px black";
             bd.style.overflow = "hidden";
+            setTimeout(function() {
+                btn.style.opacity = "1";
+                btn.style.transform = "scale(1)";
+                btn.style.boxShadow = "-5px 5px 10px black";
+            }, 350)
         }, 200)
     } else if (btn.dataset.state == "open") {
         menu.style.transform = "translate3d(-100%, 0px, 0px)";
@@ -63,11 +66,8 @@ function toggleMenu(tog) {
     }
 }
 function menuItemSelection(btn, animateDelay, pageDelay) {
-    var bottomBar = document.getElementById(btn + "Hr"),
-        item = document.getElementById(btn),
+    var item = document.getElementById(btn),
         page = item.dataset.page;
-        bottomBar.style.transform = "rotateY(0deg)";
-        bottomBar.style.opacity = "1";
     setTimeout(function(){
         if (item.id.substr(11, 6).toLowerCase() == "mobile") {
             toggleMenu("navMenuBtn")
@@ -97,7 +97,7 @@ function JSLink(btn, IntExt, delay) {
         window.history.back()
     } else if (IntExt == 'internal') {
         var location = document.getElementById(btn).dataset.page,
-            section = document.getElementById(location).offsetTop;
+            section = document.getElementById(location).offsetTop - navBarBackFill() - 50;
         setTimeout( function() {
             window.scrollTo(0, section);
         }, delay)
