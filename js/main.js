@@ -1,10 +1,5 @@
 window.addEventListener('load', function() {
-    // animate in shortcut buttons and yb image
-    setTimeout(function(){
-        fadeInElementsTrig("navMenuItem", 350);
-    }, 750)
     navBarBackFill()
-    alert("THIS WEBSITE IS NOT FINISHED \n LINKS MAY NOT WORK")
 })
 window.addEventListener("resize", function(){
     var body = document.getElementById('body'),
@@ -103,4 +98,21 @@ function JSLink(btn, IntExt, delay) {
         }, delay)
     };
 
+}
+function loadYBIMG(imgLoc, destination, num) {
+    window.addEventListener('load', function () {
+       var location = document.getElementById(destination);
+       /*Student Pics*/
+       for (i = 1; i <= num; i++) {
+           var img = document.createElement('img'),
+           imgSrc = imgLoc;
+           img.src = imgSrc + i + '_small.jpg';
+           img.setAttribute('class', 'ybIMG');
+           img.setAttribute('id', 'img' + i);
+           img.setAttribute('data-page', imgSrc + i + '.jpg');
+           img.setAttribute('onclick', "JSLink(this.id, 'newTab', 0)");
+           location.appendChild(img);
+        }
+        fadeInElementsTrig("ybIMG", 200);
+       })
 }

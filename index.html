@@ -7,6 +7,18 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="icon" href="media/icon.ico">
         <script src="js/main.js"></script>
+        <style>
+            .navMenuItem {
+                opacity: 0;
+            }
+        </style>
+        <script>
+            alert("THIS WEBSITE IS NOT FINISHED \n LINKS MAY NOT WORK")
+            // animate in shortcut buttons
+            setTimeout(function(){
+                fadeInElementsTrig("navMenuItem", 350);
+            }, 750)
+        </script>
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="theme-color" content="#0078C8"/>
@@ -92,19 +104,6 @@
         </div>
         <hr style="width: 50%; margin: 15px 25% 15px 25%; background-color: rgb(215, 10, 45);"/>
         <div class="content">
-            <!-- Commented code moves to group photos page
-            <div class="photoGal">
-                <div class="photoGalControls">
-                    <img src="media/spring/group_photos/sports/track-xc/1.jpg" class="photoGalControlImg"/>
-                    <img src="media/spring/group_photos/sports/track-xc/2.jpg" class="photoGalControlImg"/>
-                    <img src="media/spring/group_photos/sports/track-xc/3.jpg" class="photoGalControlImg"/>
-                    <br/>
-                </div>
-                <div class="photoGalContent">
-                    kjsdhf
-                </div>
-            </div>
-        -->
             <div id="fallSec">
                 <div class="contentTitle">Fall</div>
                 <div class="seasonContentImgs">
@@ -139,9 +138,9 @@
                         <hr/>
                     </button>
                     <button class="navItemMobile"
-                            data-page="html/fall/homosapiens.html" id="seasonContentFallBtn4"
+                            data-page="html/staff.html" id="seasonContentFallBtn4"
                             onmousedown="JSLink(this.id, 'external', 350)">
-                        School Pictures
+                        Staff
                         <hr/>
                     </button>
                 </div>

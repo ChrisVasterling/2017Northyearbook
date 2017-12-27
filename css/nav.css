@@ -130,7 +130,6 @@
         font-size: 20px;
         color:black;
         cursor: pointer;
-        opacity: 0;
         display: inline-block;
         border-radius: 5px;
         transition: all 350ms ease-in-out;

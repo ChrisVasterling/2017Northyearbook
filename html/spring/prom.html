@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prom | 2017 North Yearbook</title>
+        <link rel="stylesheet" href="../../css/nav.css">
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="icon" href="../../media/icon.ico">
+        <script src="../../js/main.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="theme-color" content="#0078C8"/>
+        <script>
+            loadYBIMG("../../media/spring/prom/", "prom", 2);
+        </script>
+    </head>
+    <body id="body">
+        <div class="navBar" id="navBar">
+            <button class="navMenuBtn" onmousedown="toggleMenu(this.id)" id="navMenuBtn" data-state="close">
+                <div class="navMenuBtnBar"></div>
+                <div class="navMenuBtnBar"></div>
+                <div class="navMenuBtnBar"></div>
+            </button>
+            <div class="navText">
+                2017 North Yearbook
+            </div>
+            <div class="navMenu" id="navMenu">
+                <div onmousedown="menuItemSelection(this.id, 350, 0)" class="navMenuItem" id="navMenuItem1" data-page="../seniors.html">
+                    Seniors
+                    <hr id="navMenuItem1Hr"/>
+                </div>
+                <div onmousedown="menuItemSelection(this.id, 350, 0)" class="navMenuItem" id="navMenuItem2" data-page="../juniors.html">
+                    Juniors
+                    <hr id="navMenuItem2Hr"/>
+                </div>
+                <div onmousedown="menuItemSelection(this.id, 350, 0)" class="navMenuItem" id="navMenuItem3" data-page="../sophomores.html">
+                    Sophomores
+                    <hr id="navMenuItem3Hr"/>
+                </div>
+                <div onmousedown="menuItemSelection(this.id, 350, 0)" class="navMenuItem" id="navMenuItem4" data-page="../freshmen.html">
+                    Freshmen
+                    <hr id="navMenuItem4Hr"/>
+                </div>
+            </div>
+            <div class="navMenuMobile" id="navMenuMobile">
+                <img src="../../media/NHSLogo.jpg"/>
+                <a href="http://www.ecasd.us/North-High-School/Home" target="_blank"
+                   style="width: 100%; text-align: center; display: block; text-decoration: underline;">
+                   Website
+                </a>
+                <hr style="width: 80%; margin: 10px 10% 10px 10%; background-color: rgb(200, 200, 200);"/>
+                <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile1" data-page="../seniors.html">
+                    Seniors
+                    <hr id="navMenuItemMobile1Hr"/>
+                </div>
+                <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile2" data-page="../juniors.html">
+                    Juniors
+                    <hr id="navMenuItemMobile2Hr"/>
+                </div>
+                <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile3" data-page="../sophomores.html">
+                    Sophomores
+                    <hr id="navMenuItemMobile3Hr"/>
+                </div>
+                <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile4" data-page="../freshmen.html">
+                    Freshmen
+                    <hr id="navMenuItemMobile4Hr"/>
+                </div>
+                <hr style="width: 50%; margin: 5px 25% 5px 25%; background-color: rgb(200, 200, 200);"/>
+                <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile5" data-page="../dances.html">
+                    Dances
+                    <hr id="navMenuItemMobile5Hr"/>
+                </div>
+                <div onmousedown="menuItemSelection(this.id, 350, 350)" class="navItemMobile" id="navMenuItemMobile6" data-page="../staff.html">
+                    Staff
+                    <hr id="navMenuItemMobile6Hr"/>
+                </div>
+            </div>
+            <div class="navMenuCover" id="navMenuCover" onmousedown="toggleMenu('navMenuBtn')"></div>
+        </div>
+        <div class="navBarBackFiller" id="navBarBackFiller"></div>
+        <hr style="width: 80%; margin: 20px 10% 20px 10%; background-color: rgb(215, 10, 45);"/>
+        <div class="contentNav">
+            <button class="navItemMobile contentNavBtn" onclick="JSLink(this.id, 'external', 350)" id="fallBtn" data-page="../../index.html">
+                Home
+                <hr/>
+            </button>
+        </div>
+        <hr style="width: 50%; margin: 15px 25% 15px 25%; background-color: rgb(215, 10, 45);"/>
+        <div class="content">
+            <div class="contentTitle">
+                Prom
+            </div>
+            <div id="prom"></div>
+        </div>
+    </body>
+</html>

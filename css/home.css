@@ -1,6 +1,15 @@
 /*Styles on home page only*/
+.contentTitle {
+    padding: 0px;
+    padding-top: 50px !important;
+}
 #fallSec > .contentTitle {
-    padding-top: 0px;
+    padding-top: 0px !important;
+}
+.ybIMG {
+    height: 390px !important;
+    width: 300px !important;
+    opacity: 1 !important;
 }
 .seasonContentBtns {
     background-color: rgb(100, 150, 195);
@@ -32,9 +41,6 @@
 }
 .seasonContentBtns > .navItemMobile:nth-child(3) {
     border-bottom-left-radius: 5px;
-}
-.seasonContentBtns > .navItemMobile:nth-child(4) {
-    border-bottom-right-radius: 5px;
 }
 .seasonContentBtns > .navItemMobile:hover {
     border-color: rgb(200, 200, 200);
@@ -94,10 +100,16 @@
         margin-left: calc(10% / 2);
     }
     .seasonContentBtns > .navItemMobile {
-        font-size: 17px;
+        font-size: 18px;
         margin: 5px;
         height: calc(50% - 10px);
         width: calc(50% - 10px);
+    }
+    #seasonContentFallBtn1 {
+        width: calc(100% - 10px);
+    }
+    #seasonContentFallBtn4 {
+        display: none;
     }
     .ybIMG {
         margin:10px;
@@ -119,5 +131,8 @@
         width: 100%;
         margin: 10px 0px 10px 0px;
         padding: 10px;
+    }
+    #seasonContentFallBtn1 {
+        width: 100%;
     }
 }
