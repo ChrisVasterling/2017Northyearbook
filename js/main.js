@@ -92,7 +92,7 @@ function JSLink(btn, IntExt, delay) {
         window.history.back()
     } else if (IntExt == 'internal') {
         var location = document.getElementById(btn).dataset.page,
-            section = document.getElementById(location).offsetTop - navBarBackFill() - 50;
+            section = document.getElementById(location).offsetTop - navBarBackFill() - 10;
         setTimeout( function() {
             window.scrollTo(0, section);
         }, delay)
@@ -115,4 +115,54 @@ function loadYBIMG(imgLoc, destination, num) {
         }
         fadeInElementsTrig("ybIMG", 200);
        })
+}
+function loadGalIMGS(imgLoc, destination, num) {
+    window.addEventListener('load', function () {
+        var location = document.getElementById(destination);
+        /*Student Pics*/
+        for (i = 1; i <= num; i++) {
+            var img = document.createElement('img'),
+            imgSrc = imgLoc;
+            img.src = imgSrc + i + '_small.jpg';
+            img.setAttribute('class', 'galleryIMG');
+            img.setAttribute('id', 'img' + i);
+            img.setAttribute('data-page', imgSrc + i + '.jpg');
+            img.setAttribute('onclick', "JSLink(this.id, 'newTab', 0)");
+            location.appendChild(img);
+         }
+         fadeInElementsTrig("galleryIMG", 200);
+    })
+}
+function changeGalIMGS(imgLoc, destination, num) {
+    var loc = imgLoc,
+        dest = document.getElementById(destination);
+        /*Wait for hover animation on touchscreen*/
+    setTimeout(function(){
+        /*close menu after hover animation*/
+        openGalleryBtns("galBtnTrig")
+        setTimeout(function(){
+            dest.innerHTML = "";
+            for (i=1; i<=num; i++) {
+                var img = document.createElement("img");
+                img.src = loc + i + '_small.jpg';
+                img.setAttribute('class', 'galleryIMG');
+                img.setAttribute('id', 'img' + i);
+                img.setAttribute('data-page', loc + i + '.jpg');
+                img.setAttribute('onclick', "JSLink(this.id, 'newTab', 0)");
+                dest.appendChild(img);
+            }
+            fadeInElementsTrig("galleryIMG", 200);
+        }, 350)
+    }, 400)
+}
+function openGalleryBtns(id) {
+    var btns = document.getElementById("galleryBtns"),
+        trig = document.getElementById(id);
+    if (trig.dataset.open == "true") {
+        btns.classList.add("galleryBtnsClose");
+        trig.dataset.open = "false";
+    } else if (trig.dataset.open == "false") {
+        btns.classList.remove("galleryBtnsClose");
+        trig.dataset.open = "true";
+    }
 }

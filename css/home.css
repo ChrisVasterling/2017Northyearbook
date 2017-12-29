@@ -59,6 +59,16 @@
 .seasonContentImg {
     text-align: center;
 }
+.et {
+    display: inline-block;
+}
+.footer {
+    width: 50%;
+    margin-top: 25px;
+    margin-left: 25%;
+    padding: 10px;
+    font-size: 20px;
+}
 @supports (justify-content: flex-end) and (flex: 1) and (align-items: center) {
     .seasonContentImgs {
         display: flex;
@@ -92,6 +102,9 @@
     #springSec > .seasonContentImgs > .seasonContentImg:first-of-type {
         display: none;
     }
+    .seasonContentImgs:last-of-type {
+        display: block;
+    }
     .seasonContentImg {
         text-align: center !important;
     }
@@ -116,8 +129,15 @@
         max-width: calc(100% - 20px);
         height: auto !important;
     }
+    .footer {
+        width: 90%;
+        margin-left: 5%;
+    }
 }
 @media screen and (max-width: 400px) {
+    .contentTitle {
+        padding-top: 30px !important;
+    }
     .seasonContentBtns, .seasonContentBtns > .navItemMobile {
         display: block;
     }
@@ -134,5 +154,8 @@
     }
     #seasonContentFallBtn1 {
         width: 100%;
+    }
+    .footer {
+        font-size: 15px;
     }
 }

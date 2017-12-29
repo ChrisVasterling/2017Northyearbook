@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="theme-color" content="#0078C8"/>
         <script>
-
+            loadGalIMGS("../../media/spring/group_photos/", "galleryImgs", 8);
         </script>
     </head>
     <body id="body">
@@ -89,19 +89,73 @@
             <div class="contentTitle">
                 Group Photos
             </div>
-            <!--
-            <div class="photoGal">
-                <div class="photoGalControls">
-                    <img src="media/spring/group_photos/sports/track-xc/1.jpg" class="photoGalControlImg"/>
-                    <img src="media/spring/group_photos/sports/track-xc/2.jpg" class="photoGalControlImg"/>
-                    <img src="media/spring/group_photos/sports/track-xc/3.jpg" class="photoGalControlImg"/>
-                    <br/>
+            <img src="../../media/grid.svg" class="galBtnTrig" id="galBtnTrig" onclick="openGalleryBtns(this.id)" data-open="false"/>
+            <div class="gallery" id="gallery">
+                <div class="galleryBtns galleryBtnsClose" id="galleryBtns">
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/", "galleryImgs", 8)'>
+                        Unassigned
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/music/", "galleryImgs", 4)'>
+                        Music
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/base-soft_ball/", "galleryImgs", 5)'>
+                        Base/Soft Ball
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/basketball/", "galleryImgs", 6)'>
+                        Basketball
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/dance/", "galleryImgs", 2)'>
+                        Dance
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/football/", "galleryImgs", 2)'>
+                        Football
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/golf/", "galleryImgs", 3)'>
+                        Golf
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/hockey/", "galleryImgs", 3)'>
+                        Hockey
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/soccer/", "galleryImgs", 4)'>
+                        Soccer
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/tennis/", "galleryImgs", 2)'>
+                        Tennis
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/track-xc/", "galleryImgs", 3)'>
+                        Track/Cross Country
+                        <hr/>
+                    </button>
+                    <button class="navItemMobile galleryBtn"
+                        onmousedown='changeGalIMGS("../../media/spring/group_photos/sports/volleyball/", "galleryImgs", 4)'>
+                        Volleyball
+                        <hr/>
+                    </button>
                 </div>
-                <div class="photoGalContent">
-                    kjsdhf
+                <div class="galleryContent" id="galleryImgs">
                 </div>
             </div>
-            -->
         </div>
     </body>
 </html>

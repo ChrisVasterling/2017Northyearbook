@@ -92,6 +92,7 @@
 }
 .navItemMobile:hover {
     background-color: rgb(200, 200, 200);
+    box-shadow: 0px 0px 10px black;
 }
 .navMenuCover {
     position: fixed;
